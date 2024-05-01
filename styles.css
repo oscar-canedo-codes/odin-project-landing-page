@@ -53,7 +53,7 @@ h6 {
 #container {
   /* layout */
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(4, 1fr);
   text-align: center;
 }
 #container div {
@@ -75,36 +75,38 @@ h6 {
   margin: 0 0 5px 0;
 }
 
-.top-nav {
+nav {
   /* layout */
-  grid-column: 1 / 3;
-  grid-template-columns: 1fr 2fr;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: 1 / 5;
+  padding-bottom: 30px;
 
   /* style  */
-  background-color: var(--blue);
+  background-color: var(--darkblue);
   color: var(--white);
 }
 
 header {
   /* layout */
-  justify-self: start;
+  display: grid;
+  grid-column: 2;
+  place-content: center;
+
+  /* style  */
+  background-color: var(--darkblue);
+  font-size: 12px;
 }
 header .logo {
   /* style  */
   color: var(--white);
   font-weight: 800;
 }
-nav {
-  /* layout */
-  grid-column: 2 / 3;
-
-  /* style  */
-  background-color: var(--blue);
-}
 
 menu {
   /* layout */
   display: grid;
+  grid-column: 4;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
@@ -112,6 +114,7 @@ menu ul,
 menu li {
   /* style  */
   list-style-type: none;
+  padding: 10px;
 }
 
 .hero {
@@ -139,7 +142,7 @@ main h2 {
 
 main p {
   /* style  */
-  background-color: var(--blue);
+  background-color: var(--darkblue);
   color: var(--white);
 }
 main button {
