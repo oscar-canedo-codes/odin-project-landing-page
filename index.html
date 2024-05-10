@@ -6,84 +6,104 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!--     The word container is generally used for structures that can contain more than one element. A wrapper, on the other hand, is something that wraps around a single object to provide more functionality and interface to it. -->
+
+    <!-- Display: inline-block allows to set a width and height on the element. The
+    top and bottom margins/paddings are respected.does not add a line-break
+    after the element, so the element can sit next to other elements. -->
+
     <div id="container">
       <!-- Header  -->
       <nav>
-        <header class="header">
-          <div class="logo">Header Logo</div>
-        </header>
+        <header>Header Logo</header>
 
-        <menu>
-          <li>link one</li>
-          <li>link two</li>
-          <li>link three</li>
+        <menu class="menu-container">
+          <li class="menu-wrapper">
+            <div class="menu-item">link one</div>
+          </li>
+          <li class="menu-wrapper">
+            <div class="menu-item">link two</div>
+          </li>
+          <li class="item-wrapper">
+            <div class="menu-item">link one</div>
+          </li>
         </menu>
       </nav>
 
       <!-- First Section Main -->
 
-      <div class="hero">
-        <h2>This website is awesome</h2>
-        <main>
-          <p>
+      <div class="hero-container">
+        <main class="hero-main-wrapper">
+          <h2 class="hero-main-item">This website is awesome</h2>
+          <p class="hero-main-item">
             This website has some subtext that goes here under the main title.
             It's a smaller font and the color is lower contrast
           </p>
-          <button>Sign up</button>
+          <button class="hero-main-item">Sign up</button>
         </main>
-        <div class="hero-photo">
-          <div class="photo">
-            <p>This is a placeholder for an image</p>
+        <div class="hero-photo-wrapper">
+            <p class="hero-photo-item">This is a placeholder for an image</p>
           </div>
-        </div>
       </div>
 
       <!-- Second Section Article -->
 
-      <article>
-        <h3>Some random information</h3>
-        <div class="cards">
-          <div class="card card-1">
-            <img />
-            <p>this is some subtext under an illustration or image</p>
+      <article class="article-container">
+
+        <div class="article-wrapper">
+        <h3 class="article-item">Some random information</h3>
+
+        <div class="cards-container">
+          <div class="card-wrapper">
+            <img class="card-item"/>
+            <p class="card-item">this is some subtext under an illustration or image</p>
           </div>
-          <div class="card card-2">
-            <img />
-            <p>this is some subtext under an illustration or image</p>
+          <div class="card-wrapper">
+            <img class="card-item"/>
+            <p class="card-item">this is some subtext under an illustration or image</p>
           </div>
-          <div class="card card-3">
-            <img />
-            <p>this is some subtext under an illustration or image</p>
+          <div class="card-wrapper">
+            <img class="card-item"/>
+            <p class="card-item">this is some subtext under an illustration or image</p>
           </div>
-          <div class="card card-4">
-            <img />
-            <p>this is some subtext under an illustration or image</p>
+          <div class="card-wrapper">
+            <img class="card-item"/>
+            <p class="card-item">this is some subtext under an illustration or image</p>
           </div>
+
+        </div>
         </div>
       </article>
 
       <!-- Third Section Figure -->
 
-      <figure>
-        <blockquote>An inspirational quote...</blockquote>
-        <figcaption>
+      <div class="figure-container">
+      <figure class="figure-wrapper">
+        <blockquote class="figure-item">An inspirational quote...</blockquote>
+        <figcaption class="figure-item">
           &mdash; Thor,
-          <cite>God of Thunder</cite>
+          <cite class="figure-item">God of Thunder</cite>
         </figcaption>
       </figure>
+    </div>
 
       <!-- Fourth Section Div -->
 
-      <div class="cta">
-        <h3>Call to action! It's time!</h3>
-        <p>Sign up for our product by clicking that button right over there!</p>
-        <button>Sign Up</button>
+      <div class="cta-container">
+        <div class="cta-wrapper">
+          <h3 class="cta-item"></h3>>Call to action! It's time!</h3>
+          <p class="cta-item"></h3>>
+            Sign up for our product by clicking that button right over there!
+          </p>
+          <button class="cta-item"></h3>>Sign Up</button>
+        </div>
       </div>
 
       <!-- Footer  -->
-      <footer>
-        <p>Copyright The Odin Project 2021</p>
+      <footer class="footer-wrapper">
+        <p class="footer-item">Copyright The Odin Project 2021</p>
       </footer>
+
     </div>
   </body>
 </html>
