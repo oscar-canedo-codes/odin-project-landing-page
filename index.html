@@ -5,105 +5,163 @@
     <title>The Odin Project - Landing Page</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <!--     The word container is generally used for structures that can contain more than one element. A wrapper, on the other hand, is something that wraps around a single object to provide more functionality and interface to it. -->
 
-    <!-- Display: inline-block allows to set a width and height on the element. The
-    top and bottom margins/paddings are respected.does not add a line-break
-    after the element, so the element can sit next to other elements. -->
+<!-- layout -->
+  <body class="page">
 
-    <div id="container">
-      <!-- Header  -->
-      <nav>
-        <header>Header Logo</header>
+      <!-- 'header' (container) -->
+      <header class="header">
 
-        <menu class="menu-container">
-          <li class="menu-wrapper">
-            <div class="menu-item">link one</div>
-          </li>
-          <li class="menu-wrapper">
-            <div class="menu-item">link two</div>
-          </li>
-          <li class="item-wrapper">
-            <div class="menu-item">link one</div>
-          </li>
-        </menu>
-      </nav>
+        <!--  'logo' (wrapper) -->
+        <div class="logo">
+          <!-- 'text' element in the 'logo'  -->
+          <p class="logo__text">Header Logo</p>
+        </div>
+          
+        <!--  'nav'  (container) -->
+        <nav class="nav">
+          <!-- 'menu'(grid) -->
+          <ul class="menu">
+            <!--  'link' elements in 'menu'  -->
+            <li class="menu__link">link one</li>
+            <li class="menu__link">link two</li>
+            <li class="menu__link">link three</li>
+          </ul>
+        </nav>
+      </header>
 
-      <!-- First Section Main -->
+      <!-- blocks nested in 'main'(container): 1. hero 2. article 3. quote 4. modal -->
+      <main class="main">
 
-      <div class="hero-container">
-        <main class="hero-main-wrapper">
-          <h2 class="hero-main-item">This website is awesome</h2>
-          <p class="hero-main-item">
+      <!-- 'hero'  (container) -->
+      <div class="hero">
+
+        <!-- 'section' (wrapper) within 'hero' (container) -->
+        <section class="section">
+          <!-- 'title' element in the 'section'  -->
+          <h2 class="section__title">This website is awesome</h2>
+          <!--  'text' element in the 'section'  -->
+          <p class="section__text">
             This website has some subtext that goes here under the main title.
             It's a smaller font and the color is lower contrast
           </p>
-          <button class="hero-main-item">Sign up</button>
-        </main>
-        <div class="hero-photo-wrapper">
-            <p class="hero-photo-item">This is a placeholder for an image</p>
+          <!-- 'button' element in the 'section' (flex) -->
+          <button class="button section__button">
+            <span class="button__text">Sign up</span>
+          </button>
+        </section>
+
+        <!--  'photo' (container) within 'hero' (container) -->
+        <div class="photo">
+              <!-- 'img' element within 'photo' -->
+          <div class="photo__img">
+          <!--  'text' element in the 'photo'  -->
+          <span class="photo__text">This is a placeholder for an image</span>
           </div>
+        </div>
+        
       </div>
 
-      <!-- Second Section Article -->
+      <!-- 'article' (container) -->
+      <article class="article">
 
-      <article class="article-container">
+        <!-- 'article' title element -->
+        <h3 class="article__title">Some random information</h3>
 
-        <div class="article-wrapper">
-        <h3 class="article-item">Some random information</h3>
+      <!-- 'cards' (container) within 'article' (container) -->
+          <div class="cards">
 
-        <div class="cards-container">
-          <div class="card-wrapper">
-            <img class="card-item"/>
-            <p class="card-item">this is some subtext under an illustration or image</p>
+            <!-- 'card' (wrapper) -->
+            <div class="card">
+              <!-- 'img' element within 'card' -->
+              <img class="card__img" />
+              <!-- 'text' element within 'card' -->
+              <span class="card__text">
+                this is some subtext under an illustration or image
+              </span>
+            </div>
+            <!-- 'card' (wrapper) -->
+            <div class="card">
+              <!-- 'img' element within 'card' -->
+              <img class="card__img" />
+              <!-- 'text' element within 'card' -->
+              <span class="card__text">
+                this is some subtext under an illustration or image
+              </span>
+            </div>
+            <!-- 'card' (wrapper) -->
+            <div class="card">
+              <!-- 'img' element within 'card' -->
+              <img class="card__img" />
+              <!-- 'text' element within 'card' -->
+              <span class="card__text">
+                this is some subtext under an illustration or image
+              </span>
+            </div>
+            <!-- 'card' (wrapper) -->
+            <div class="card">
+              <!-- 'img' element within 'card' -->
+              <img class="card__img" />
+              <!-- 'text' element within 'card' -->
+              <span class="card__text">
+                this is some subtext under an illustration or image
+              </span>
+            </div>
           </div>
-          <div class="card-wrapper">
-            <img class="card-item"/>
-            <p class="card-item">this is some subtext under an illustration or image</p>
-          </div>
-          <div class="card-wrapper">
-            <img class="card-item"/>
-            <p class="card-item">this is some subtext under an illustration or image</p>
-          </div>
-          <div class="card-wrapper">
-            <img class="card-item"/>
-            <p class="card-item">this is some subtext under an illustration or image</p>
-          </div>
-
-        </div>
-        </div>
+          
       </article>
 
-      <!-- Third Section Figure -->
+      <!-- 'quote' container -->
+      <div class="quote">
 
-      <div class="figure-container">
-      <figure class="figure-wrapper">
-        <blockquote class="figure-item">An inspirational quote...</blockquote>
-        <figcaption class="figure-item">
-          &mdash; Thor,
-          <cite class="figure-item">God of Thunder</cite>
-        </figcaption>
-      </figure>
-    </div>
-
-      <!-- Fourth Section Div -->
-
-      <div class="cta-container">
-        <div class="cta-wrapper">
-          <h3 class="cta-item"></h3>>Call to action! It's time!</h3>
-          <p class="cta-item"></h3>>
-            Sign up for our product by clicking that button right over there!
-          </p>
-          <button class="cta-item"></h3>>Sign Up</button>
+        <!-- 'blockquote' wrapper -->
+        <div class="blockquote">
+          <!-- 'blockquote' text within 'figure'(container) -->
+          <blockquote class="blockquote__text">
+            An inspirational quote, or a testimonial from a customer. Maybe it's
+            just filling up space, or maybe people will actually read it. Who
+            knows? All I know is that it looks nice.
+          </blockquote>
+          <!-- 'caption' element within 'blockquote'  -->
+          <figcaption class="blockquote__caption">
+            &mdash; Thor,
+            <!-- 'citation' element within 'blockquote' -->
+            <cite class="blockquote__citation">God of Thunder</cite>
+          </figcaption>
         </div>
-      </div>
 
-      <!-- Footer  -->
-      <footer class="footer-wrapper">
-        <p class="footer-item">Copyright The Odin Project 2021</p>
+        </div>
+
+
+      <!-- 'modal' (container) -->
+      <div class="modal">
+
+        <!-- 'cta' (wrapper) -->
+        <div class="cta">
+          <!-- 'title' element within 'modal' -->
+          <h3 class="cta__title">Call to action! It's time!</h3>
+          <!-- 'text' element within 'modal' -->
+          <span class="cta__text">
+            Sign up for our product by clicking that button right over there!
+          </span>
+        </div>
+          <!-- 'button' element (flex) -->
+          <button class="button cta__button">
+            <!-- 'text' element within 'button' -->
+            <span class="button button__text">
+            Sign Up
+            </span>
+          </button>
+        </div>
+
+    </main>
+
+      <!-- 'footer' container  -->
+      <footer class="footer">
+
+        <!-- 'text' element within 'footer' -->
+        <span class="footer__text">Copyright The Odin Project 2021</span>
       </footer>
 
-    </div>
   </body>
 </html>

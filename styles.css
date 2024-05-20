@@ -1,22 +1,17 @@
 :root {
-  /* --yellow: #ffc600; */
   --black: #272727;
   --darkblue: #1f2937;
   --white: #ffffff;
-  --darkgrey: #dfdbdb;
+  --lightgrey: #dfdbdb;
   --cornflowerblue: #3882f6;
+  --darkgrey: #4f4f4f;
 }
 
 html {
   /* border-box box model allows us to add padding and border to our elements without increasing their size */
   box-sizing: border-box;
-  /* A system font stack so things load nice and quick! */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  /* font-weight: 900;
-  font-size: 10px; 
-  color: var(--black);*/
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
 }
 
 /*We inherit box-sizing: border-box; from our <html> selector
@@ -29,14 +24,12 @@ html {
 }
 
 body {
-    background-image: url("./assests/topography"),
+  background-image: url("./assests/topography"),
     linear-gradient(110deg, #f93d66, #6d47d9);
   background-size: 340px, auto;
   min-height: calc(100vh - 100px);
   margin: 20px;
-  /* background: white; */
   background-attachment: fixed;
-  letter-spacing: -1px;
 }
 
 h1,
@@ -48,258 +41,228 @@ h6 {
   margin: 0 0 5px 0;
 }
 
-/* CSS Grid is for layout; Flexbox is for alignment. */
-
-#container {
-  /* layout */
+.page {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
   max-width: 980px;
+}
+
+.button {
+  background-color: var(--cornflowerblue);
+  color: var(--white);
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.header {
+  /* position */
+  display: grid;
+
+  /* style  */
+  background-color: var(--darkblue);
+  color: var(--white);
+}
+
+.logo {
+  justify-self: flex-end;
+}
+.logo__text {
+  font-size: 18px;
+  font-weight: 800;
+}
+.nav {
+  grid-column: 3;
+  align-self: center;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.menu__link {
+  list-style-type: none;
+}
+
+.main {
+  /* position */
+  display: grid;
+  grid-column: 1 / -1;
+
+  /* layout */
+  grid-template-columns: 1fr 3fr 1fr;
 
   /* style */
   background-color: var(--white);
 }
-#container div {
-  /* layout */
+.hero {
+  /* position */
   display: grid;
+  grid-column: 1 / -1;
 
-  /* style  */
-  justify-content: center;
-  align-items: center;
-
-  /* editor */
-  /* border: 5px solid rgba(0, 0, 0, 0.03); */
-  /* border-radius: 3px; */
-  /* font-size: 24px; */
-}
-
-#container p {
-  margin: 0 0 5px 0;
-}
-
-nav {
   /* layout */
-  display: grid;
-  grid-column: 1 / 5;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
 
-  /* style  */
-  background-color: var(--darkblue);
-  color: var(--white);
-}
-
-header {
-  /* layout */
-  display: grid;
-  grid-column: 2;
-  justify-content: flex-start;
-  align-content: center;
-
-  /* style  */
-  background-color: var(--darkblue);
-  font-size: 18px;
-  color: var(--white);
-  font-weight: 800;
-}
-
-menu.menu-container {
-  /* layout */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-content: center;
-}
-
-menu.menu-wrapper{
-  display: grid;
-  grid-column: 3 / 5;
-}
-menu.menu-item {
-  /* style  */
-  list-style-type: none;
-}
-
-.hero-container {
-  /* layout */
-  grid-row: 2;
-  grid-column: 1 / 5;
-  max-width: 970px;
-
-  /* style  */
+  /* style */
   background-color: var(--darkblue);
 }
 
-h2.hero-main-item {
-  /* layout  */
-  display: grid;
+.section {
+  /* layout */
   grid-column: 2;
 
   /* style  */
-  background-color: var(--darkblue);
-  font-size: 18px;
   color: var(--white);
-}
-main.hero-main-wrapper {
-  /* layout */
-  grid-row: 2;
-
-  /* style  */
-  background-color: var(--darkblue);
-  color: var(--white);
-
-  /* editor */
-  max-width: 300px;
+  text-align: left;
+  padding: 20px;
 }
 
-h2.hero-main-item {
-  /* style  */
-  background-color: var(--darkblue);
-  color: var(--white);
-
+.section__title {
+  font-size: 36px;
+}
+.section__text {
   font-size: 14px;
 }
 
-p.hero-main-item {
-  /* style  */
-  font-size: 10px;
-  background-color: var(--darkblue);
-  color: var(--white);
-}
-button.hero-main-item {
-  /* layout  */
-  grid-row: 3;
-
-  /* style  */
-  margin: 2rem;
-  padding: 1.5rem;
-  font-size: 12px;
+.section__button {
+  padding: 6px 12px;
   border: none;
-  border-radius: 50px;
-  box-shadow: none;
-  background-color: var(--cornflowerblue);
-  color: var(--white);
 }
 
-.hero-photo-wrapper {
-  /* layout */
-  grid-row: 1 / 3;
-  grid-column: 3 / 4;
+.photo {
+  grid-column: 3;
+  display: grid;
+  align-content: center;
+}
+
+.photo__img {
+  /* position */
+  display: grid;
+  place-content: center;
 
   /* style  */
   background-color: var(--darkgrey);
   color: var(--white);
 }
 
-article,
-.article-container {
-  /* layout */
-  display: grid;
-  grid-column: 1 / 5;
+.photo__text {
+  align-self: center;
+  margin: 80px 0px;
 }
 
-article h3,
-.article-item {
-  /* layout  */
-  grid-row: 1;
-  font-size: 12px;
-  display: grid;
-  grid-column: 1 / 5;
-
-  /* style  */
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--blue);
-}
-.cards-container {
-  /* layout */
-  grid-column: 2 / 4;
-  margin: 1em;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.card-wrapper {
-  /* style  */
-  border: 5px solid var(--cornflowerblue);
-  border-radius: 50px;
-  height: 200px;
-}
-p.card-item {
-  /* style  */
-  font-weight: normal;
-  font-size: 14px;
-}
-
-figure,
-.figure-container {
-  /* layout */
-  grid-row: 4;
-  grid-column: 1 / 5;
-
-  /* style  */
-  background-color: var(--darkgrey);
-  font-size: 36px;
-  font-style: italic;
-}
-
-.cta-container {
-  /* layout */
-  grid-column: 1 / 5;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: 1fr 3fr 1fr 1fr;
-}
-
-.cta-wrapper {
-  /* layout */
-  grid-template-columns: 2fr 1fr;
-  grid-column: 2 / 4;
-  grid-row: 2;
-
-  /* style  */
-  background-color: var(--cornflowerblue);
-  color: var(--white);
-  border-radius: 10px;
-}
-
-h3.cta-item {
-  /* layout  */
-  grid-row: 1;
-  grid-column: 1 / 2;
-
-  /* style  */
-  font-weight: 700;
-  color: var(--white);
-}
-
-p.cta-item {
-  /* layout  */
-  grid-row: 2;
-  grid-column: 1 / 2;
-
-  /* style  */
-  color: var(--white);
-}
-button.cta-item {
-  /* layout  */
-
-  grid-row: 2;
+.article {
+  /* position */
   grid-column: 2;
 
   /* style */
-  cursor: pointer;
   margin: 2rem;
-  padding: 8px;
-  font-size: 12px;
-  border-radius: 50px;
-  box-shadow: none;
-  background-color: var(--cornflowerblue);
-  color: var(--white);
-  border: 2px solid white;
+}
+.article__title {
+  /* positon  */
+  display: flex;
+  justify-content: center;
+
+  /* style  */
+  font-size: 36px;
+  font-weight: 800;
+}
+.cards {
+  /* layout */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  /* style */
+  padding: 0.5rem;
+  margin-top: 20px;
+  gap: 30px;
+}
+.card {
+  display: grid;
+  place-items: center;
 }
 
-footer,
-.footer-wrapper {
+.card__img {
+  /* style */
+  width: 100px;
+  height: 100px;
+  border: 5px solid var(--cornflowerblue);
+  border-radius: 20px;
+}
+.card__text {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.quote {
+  grid-column: 1 / -1;
+}
+.blockquote {
   /* layout */
+  display: inline-grid;
+
+  /* style */
+  background-color: var(--lightgrey);
+  padding: 2rem;
+  font-style: italic;
+}
+
+.blockquote__text {
+  margin: 0px 100px;
+}
+
+.blockquote__caption {
+  /* position */
+  display: flex;
+  justify-content: end;
+
+  /* style */
+  font-weight: 700;
+}
+
+.blockquote__citation {
+  /* position */
+  display: flex;
+  justify-content: end;
+
+  /* style */
+  font-weight: 700;
+}
+
+.modal {
+  /* position */
+  grid-column: 2;
+
+  /* layout */
+  display: flex;
+  justify-content: center;
+
+  /* style */
+  background-color: var(--cornflowerblue);
+  color: var(--white);
+  width: 600px;
+  margin: 60px;
+  padding: 20px 20px;
+  border-radius: 20px;
+}
+.cta {
+  margin: 10px;
+}
+
+.cta__title {
+  font-weight: 700;
+}
+
+.cta__text {
+  justify-items: center;
+}
+
+.cta__button {
+  flex-shrink: 0;
+  border: 2px solid var(--white);
+  padding: 10px;
+  margin: 20px;
+}
+
+.footer {
+  /* position */
   display: grid;
   grid-column: 1 / 5;
   justify-content: center;
@@ -307,12 +270,10 @@ footer,
   /* style  */
   background-color: var(--darkblue);
   color: var(--white);
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
-footer p,
-.footer-item {
-  /* style  */
+.footer__text {
   font-size: 12px;
   font-weight: normal;
 }
